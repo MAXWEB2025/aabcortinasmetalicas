@@ -374,6 +374,11 @@
                     rows="5"
                     placeholder="Mensaje"
                     required></textarea>
+                    <!-- Campo trampa oculto para los usuarios, pero visible para los robots --> 
+<div style="display:none !important; visibility:hidden;"> 
+    <input type="text" name="verificacion_segura" value=""> 
+    </div> 
+    
         
                 <button
                     type="submit"

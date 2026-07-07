@@ -1,9 +1,10 @@
-<?php
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST") { 
 
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    header("Location: index.html");
-    exit();
-}
+if (!empty($_POST['verificacion_segura'])) { 
+http_response_code(400); 
+exit("Acceso denegado."); 
+} 
 
 /* ==========================
    CONFIGURACIÓN
@@ -107,7 +108,7 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 ========================== */
 
 if (mail($destinatario, $asunto, $cuerpo, $headers)) {
-
+}
     echo "
     <!DOCTYPE html>
     <html lang='es'>
